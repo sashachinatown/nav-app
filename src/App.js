@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import {Blogs, Contact, Home, Layout, NoPage } from './pages/export';
+import { createMemoryHistory } from 'history';
 
-function App() {
+const App = () => {
+  const history = createMemoryHistory();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router location={history.location} navigator={history}>
+      <ul>
+        <li>
+          <Link to="/layout">Layout</Link>
+        </li>
+        <li>
+          <Link to="/home">Home</Link>
+        </li>
+        <li>
+          <Link to="/blogs">Blogs</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+      <div className='page'>
+        <Routes>
+          <Route path="/layout" element={<Layout />}/>
+          <Route path="/home" element={<Home />}/>
+          <Route path="/blogs" element={<Blogs />}/>
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="*" element={<NoPage />}/>
+        </Routes>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
