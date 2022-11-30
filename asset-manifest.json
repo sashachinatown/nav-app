@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nav-app/static/css/main.e6c13ad2.css",
+    "main.js": "/nav-app/static/js/main.74a88ebb.js",
+    "index.html": "/nav-app/index.html",
+    "main.e6c13ad2.css.map": "/nav-app/static/css/main.e6c13ad2.css.map",
+    "main.74a88ebb.js.map": "/nav-app/static/js/main.74a88ebb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.74a88ebb.js"
+  ]
+}
